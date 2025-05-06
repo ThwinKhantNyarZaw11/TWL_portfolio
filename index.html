@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toe Wai Hlyan - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1000;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #69573b 0%, #562722 50%, #1f0703 100%);
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .profile-img {
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        .mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.show {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-white">
+    <div class="flex justify-center pt-4 fixed w-full top-0 z-50">
+        <nav class="glass-nav rounded-full px-8 py-3 w-full max-w-2xl mx-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-xl font-bold">Toe Wai Hlyan</a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-sky-200 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-sky-200 transition-colors">About</a>
+                    <a href="#projects" class="hover:text-sky-200 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-sky-200 transition-colors">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-20 left-4 right-4 hidden flex-col glass-card rounded-lg p-4 z-40">
+        <a href="#home" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">Home</a>
+        <a href="#about" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">About</a>
+        <a href="#projects" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">Projects</a>
+        <a href="#contact" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">Contact</a>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center px-4 gradient-bg">
+            <div class="flex flex-col md:flex-row items-center gap-10 glass-card p-10 rounded-2xl backdrop-blur-sm shadow-lg max-w-4xl w-full">
+                
+                <!-- Profile Image -->
+                <div class="flex justify-center md:justify-start">
+                    <img src="./assets/Toe Wai Hlyan.jpg"
+                         alt="Toe Wai Hlyan"
+                         class="w-48 h-48 rounded-full object-cover border-4 border-purple-200 shadow-md">
+                </div>
+                
+                <!-- Info Section -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-5xl font-bold mb-4 text-white">Toe Wai Hlyan</h1>
+                    <p class="text-xl mb-4 text-white">Jewelry Designer | Freelancer</p>
+                    <p class="text-lg text-purple-200">EMERALD MGK Company</p>
+                </div>
+        
+            </div>
+        </section>
+        
+
+        <!-- About Section -->
+        <section id="about" class="min-h-screen flex items-center justify-center px-4 py-20">
+            <div class="max-w-3xl glass-card mx-auto p-10 rounded-lg shadow-lg">
+                <h2 class="text-4xl font-bold mb-8 text-center">About Me</h2>
+                <p class="text-lg leading-relaxed">
+                    Creative and detail-oriented Jewelry Designer with a passion for turning inspiration into wearable art. Skilled in sketching, CAD design, and material selection to craft elegant, timeless pieces that reflect both beauty and individuality. From concept to final polish, I combine artistic vision with technical precision to create designs that shine.</div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="min-h-screen px-4 py-20 relative gradient-bg">
+            
+            <div class="relative z-10">
+                <h2 class="text-4xl font-bold mb-12 text-center">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            
+                    <a href="projects/custom-bridal-collection.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">Custom Bridal Collection</h3>
+                        <p class="text-purple-200">Designed bespoke engagement rings and wedding bands tailored to individual love stories</p>
+                    </a>
+            
+                    <a href="projects/gemstone-series.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">Gemstone Series Launch</h3>
+                        <p class="text-purple-200">Created a seasonal jewelry line focused on ethically sourced natural gemstones</p>
+                    </a>
+            
+                    <a href="projects/cad-prototyping.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">CAD Prototyping for Custom Orders</h3>
+                        <p class="text-purple-200">Utilized CAD tools to transform sketches into 3D models for precision crafting</p>
+                    </a>
+            
+                    <a href="projects/vintage-revival.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">Vintage Jewelry Revival</h3>
+                        <p class="text-purple-200">Restored and redesigned heirloom pieces while preserving their original charm</p>
+                    </a>
+            
+                    <a href="projects/jewelry-branding.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">Jewelry Branding & Packaging</h3>
+                        <p class="text-purple-200">Developed cohesive branding and luxury packaging to elevate customer experience</p>
+                    </a>
+            
+                    <a href="projects/trend-research.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">Trend Research & Mood Board</h3>
+                        <p class="text-purple-200">Compiled seasonal inspiration boards to align future collections with fashion trends</p>
+                    </a>
+            
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="min-h-screen flex items-center justify-center px-4 py-20">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold mb-8">Contact Me</h2>
+                <div class="space-y-4">
+                    <p class="text-lg">
+                        <span class="font-bold">Email:</span>
+                        <a href="mailto:andrew.caesar.15.6@gmail.com" class="text-purple-200 hover:text-purple-300">andrew.caesar.15.6@gmail.com</a>
+                    </p>
+                    <p class="text-lg">
+                        <span class="font-bold">Phone:</span>
+                        <a href="tel:08-342-607-79" class="text-purple-200 hover:text-purple-300">08-342-607-79</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
